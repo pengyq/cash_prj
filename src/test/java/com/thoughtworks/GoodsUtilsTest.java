@@ -23,16 +23,17 @@ public class GoodsUtilsTest {
 		for (String id : GoodsUtils.getGoodsList().keySet()) {
 			System.out.println(goos_list.get(id));
 		}
-		fail("Not yet implemented");
+		fail("test get goods list fial");
 	}
 
 	@Test
 	public void testBulkGoodsIDGet() throws IOException {
+		System.err.println("生成自增ID 的散装称重产品id");
 		System.out.println(GoodsUtils.bulkGoodsIDGet());
 		System.out.println(GoodsUtils.bulkGoodsIDGet());
 		System.out.println(GoodsUtils.bulkGoodsIDGet());
 		System.out.println(GoodsUtils.bulkGoodsIDGet());
-		fail("Not yet implemented");
+		fail("test bulk goods id");
 	}
 	
 	

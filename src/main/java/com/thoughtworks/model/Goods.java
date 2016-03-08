@@ -4,39 +4,55 @@ public class Goods {
 
 	// Commodity bar code
 	private String id;
+
+	public String getId() {
+		return id;
+	}
+
+	public String getUnit() {
+		return unit;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
 	// goods unit default 个
 	private String unit = "个";
 	// goods name
 	private String name;
-	// goods category -1=unknow
-	private int category = -1;
+	// goods category
+	private String category = "UNKNOW";
 
-	public Goods(String id, String name, String unit, int category) {
+	// goods price
+	private double price;
+
+	public Goods(String id, String name, String unit, String category,
+			double price) {
 		this.id = id;
 		this.unit = unit;
 		this.name = name;
 		this.category = category;
-	}
-
-	public Goods(String id, String name, String unit) {
-		super();
-		this.id = id;
-		this.unit = unit;
-		this.name = name;
-		this.category = -1;
-	}
-
-	public Goods(String id, String name) {
-		super();
-		this.id = id;
-		this.unit = "个";
-		this.name = name;
-		this.category = -1;
+		this.price = price;
 	}
 
 	@Override
 	public String toString() {
-		return "Goods [id=" + id + ", unit=" + unit + ", name=" + name + ", category=" + category + "]";
+		return "Goods [id=" + id + ", unit=" + unit + ", name=" + name
+				+ ", category=" + category + ", price=" + price + "]";
+	}
+
+	public double cal(int cnt) {
+		return cnt * price;
+
 	}
 
 }
