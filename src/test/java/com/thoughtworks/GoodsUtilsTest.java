@@ -26,4 +26,14 @@ public class GoodsUtilsTest {
 		fail("Not yet implemented");
 	}
 
+	@Test
+	public void testBulkGoodsIDGet() throws IOException {
+		System.out.println(GoodsUtils.bulkGoodsIDGet());
+		System.out.println(GoodsUtils.bulkGoodsIDGet());
+		System.out.println(GoodsUtils.bulkGoodsIDGet());
+		System.out.println(GoodsUtils.bulkGoodsIDGet());
+		fail("Not yet implemented");
+	}
+	
+	
 }

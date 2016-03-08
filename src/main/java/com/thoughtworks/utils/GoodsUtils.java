@@ -17,7 +17,7 @@ public class GoodsUtils {
 	private final static String GOODS_LIST = "data/goods_list.txt";
 
 	private static Map<String, Goods> g_lists;
-	public static AtomicInteger counter_integer = new AtomicInteger(0);
+	private static AtomicInteger counter_integer = new AtomicInteger(0);
 
 	public static Map<String, Goods> getGoodsList() throws IOException {
 		if (null == g_lists) {
@@ -40,8 +40,14 @@ public class GoodsUtils {
 		return g_lists;
 	}
 
-	private String bulkGoodsIDGet() {
-		return "";
+	/**
+	 * generate increment ID
+	 * 
+	 * @return bulk goods id like BULK000001
+	 */
+	public static String bulkGoodsIDGet() {
+
+		return String.format("BULK%06d", counter_integer.incrementAndGet());
 	}
 
 	private static void initGoodsList() throws IOException {
@@ -54,10 +60,6 @@ public class GoodsUtils {
 		contents.add("ITEM000005|篮球|个|4");
 		contents.add("ITEM000006|水浒传|本|5");
 		FileUtils.writeLines(list_file, contents);
-	}
-
-	public static void main(String[] args) {
-
 	}
 
 }
