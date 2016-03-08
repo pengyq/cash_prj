@@ -61,12 +61,13 @@ public class Cash {
 			if (three_for_free.contains(g_id)) {
 				result_str.append(String.format(
 						"名称：%s，数量：%d %s，单价：%.2f(元)，小计：%.2f (元)\n", g.getName(), cnt,
-						g.getUnit(), g.getPrice(), g.cal(cnt / 2 + 1)));
-				total += g.cal(cnt / 2 + 1);
-				if (cnt > 1) {
+						g.getUnit(), g.getPrice(), g.cal(cnt / 2+cnt%2 )));
+				total += g.cal(cnt / 2 +cnt %2);
+				if (cnt > 2) {
 					if (!has_tree_for_free) {
 						tree_for_free
 								.append("----------------------\n买二赠一商品：\n");
+						has_tree_for_free=true;
 					}
 					tree_for_free.append(String.format("名称：%s，数量：%d %s\n",
 							g.getName(), (cnt / 2), g.getUnit()));
