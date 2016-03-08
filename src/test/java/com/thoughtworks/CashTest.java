@@ -3,8 +3,6 @@ package com.thoughtworks;
 import static org.junit.Assert.*;
 
 import java.io.IOException;
-import java.util.HashSet;
-
 import org.junit.Test;
 
 public class CashTest {
